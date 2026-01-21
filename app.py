@@ -86,9 +86,11 @@ from pythainlp.transliterate import romanize
 # 1) LOAD & PREPROCESS DATA (ทำครั้งเดียว)
 # =========================
 
-df = pd.read_csv('./dataset/3/1.csv')
-df_year_province = pd.read_csv('./dataset/3/df_year_province.csv')
-new_df = pd.read_csv('./dataset/3/all_OPD.csv')
+# df = pd.read_csv('./dataset/3/1.csv')
+df = pd.read_csv('../3/1.csv')
+# df_year_province = pd.read_csv('./dataset/3/df_year_province.csv')
+df_year_province = pd.read_csv('../3/df_year_province.csv')
+new_df = pd.read_csv('../3/all_OPD.csv')
 
 # รวมข้อมูล ปี–จังหวัด
 df_year_province = (
@@ -126,7 +128,8 @@ df_year_province['province_en'] = df_year_province['จังหวัด'].map(
 
 
 # โหลด geojson ครั้งเดียว
-world = gpd.read_file('./dataset/3/provinces.geojson')
+# world = gpd.read_file('./dataset/3/provinces.geojson')
+world = gpd.read_file('../3/provinces.geojson')
 # area_region = gpd.read_file('./dataset/3/reg_nesdb.geojson')
 
 # แก้ SettingWithCopyWarning + normalize ตัวอักษร
